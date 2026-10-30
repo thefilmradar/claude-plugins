@@ -1,0 +1,8 @@
+{
+  "name": "filmlab",
+  "version": "0.1.0",
+  "description": "FilmLab MCP server plus two skills that take a brief to a finished, editable film and hand timelines to Resolve, Premiere or Final Cut.",
+  "author": { "name": "FilmRadar", "url": "https://thefilmradar.com" },
+  "homepage": "https://lab.thefilmradar.com",
+  "keywords": ["film", "video", "editing", "filmlab", "mcp"]
+}

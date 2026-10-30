@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "filmlab": { "type": "http", "url": "https://mcp-lab.thefilmradar.com/mcp" }
+  }
+}

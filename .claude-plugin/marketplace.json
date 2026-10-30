@@ -1,0 +1,12 @@
+{
+  "name": "thefilmradar",
+  "description": "FilmLab for Claude Code: plan, generate, edit and export films with FilmLab.",
+  "owner": { "name": "FilmRadar", "url": "https://thefilmradar.com" },
+  "plugins": [
+    {
+      "name": "filmlab",
+      "source": "./filmlab",
+      "description": "FilmLab MCP server plus two skills that take a brief to a finished, editable film and hand timelines to Resolve, Premiere or Final Cut."
+    }
+  ]
+}
