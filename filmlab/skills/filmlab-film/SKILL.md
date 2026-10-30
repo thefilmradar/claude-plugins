@@ -24,7 +24,7 @@ Read abgleich in lab_job_status and report pass, mismatch, unverified or laeuft 
 
 ## 5. Write the whole cut, then read it back
 
-Read the existing cut with lab_get_sequence. Use lab_timeline_apply for the WHOLE cut, pass the revision you read as erwartete_revision, and retain each existing clip_id so its identity and inherited metadata survive. On revision_veraltet, read again and merge before writing. Read lab_get_sequence again after applying and check the result. Use the two groups below: perform the manifest operations yourself; for editor-only work direct the person to Murnau and Lotte and say that the editor can do it. lab_fassungen reads or restores the automatically saved checkpoints; lab_wortzeiten supplies word timings when computing pause cuts.
+Read the existing cut with lab_get_sequence. Use lab_timeline_apply for the WHOLE cut, pass the revision you read as erwartete_revision, and retain each existing clip_id so its identity and inherited metadata survive. On revision_veraltet, read again and merge before writing. Read lab_get_sequence again after applying and check the result. Use the two groups below: perform the manifest operations yourself; for editor-only work direct the person to Murnau and IRO and say that the editor can do it. lab_fassungen reads or restores the automatically saved checkpoints; lab_wortzeiten supplies word timings when computing pause cuts.
 
 WARNING: the manifest represents only one sequential row. Do not rebuild a cut containing V2+ clips through it: inherited tracks do not preserve overlapping start times. Refer that cut to Murnau. When splitting through the manifest, the second piece gets a new clip_id and inherits neither grade nor effects. Existing effects, keyframes and constant speed survive through retained clip_id, but the manifest cannot set them.
 
@@ -64,14 +64,14 @@ WAIT with wait_s on lab_get_job / lab_job_status instead of polling.
 - `entpausen` (indirect): Read lab_wortzeiten and compute the retained pieces yourself; there is no dedicated pause-cut tool.
 - `bett` (partial): manifest.bett covers the whole cut, not a selected time range; use Murnau for a time range.
 - `umsortieren` (yes): Change the order of entries in the manifest.
-- `uebergang` (partial): Only dissolve, identical at every cut. The server render does not apply it; FCPXML export does. For per-cut transitions use Murnau and Lotte.
+- `uebergang` (partial): Only dissolve, identical at every cut. The server render does not apply it; FCPXML export does. For per-cut transitions use Murnau and IRO.
 - `teilen` (indirect): Use two entries of the same source with adjacent in_s/out_s; the new clip_id inherits neither grade nor effects.
 - `einfuegen` (yes): Insert asset_key or video_id at a position in the sequential row.
 - `uebernehmen` (yes): Use the video_id of a generated video.
 
 ### Editor-only actions
 
-These actions are available in Murnau, by hand or via its assistant Lotte (descriptions in German, from the playbook):
+These actions are available in Murnau, by hand or via its assistant IRO (descriptions in German, from the playbook):
 
 - `schneiden`: Einen Clip an der Abspielposition in zwei teilen.
 - `punch`: Auf ein gesprochenes Wort einzoomen (Punch-in) — der Bildausschnitt wird für das Wort enger, sonst bewegt sich nichts.
