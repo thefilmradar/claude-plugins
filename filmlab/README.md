@@ -3,17 +3,18 @@
 Includes the remote FilmLab MCP server and two skills: `filmlab-film` takes a brief to a finished, editable film;
 `filmlab-schnittplatz` guides timeline handover to Resolve, Premiere or Final Cut.
 
-From the repository root, load it for one session:
+Install from the FilmRadar marketplace:
 
 ```sh
-claude --plugin-dir integrations/claude-plugin/filmlab
+claude plugin marketplace add thefilmradar/claude-plugins
+claude plugin install filmlab@thefilmradar
 ```
 
-Or install through the local marketplace:
+Or load it for one session from a checkout of the marketplace (the folder that
+holds `.claude-plugin/marketplace.json`):
 
 ```sh
-claude plugin marketplace add integrations/claude-plugin
-claude plugin install filmlab@thefilmradar
+claude --plugin-dir ./filmlab
 ```
 
 Sign in via `/mcp` → `plugin:filmlab:filmlab` → Authenticate. Claude Code uses
@@ -27,8 +28,5 @@ loaded each FilmLab tool would appear twice. If you need Resolve control, add
 the bridge from the FilmLab installer separately, as described in the FilmLab
 handbook.
 
-The skills are generated. Edit `shared/agenten-weg.ts`, then run:
-
-```sh
-node --experimental-strip-types scripts/agenten-skill/erzeuge.mjs
-```
+The skills are generated from FilmRadar's main repository; edits made here are
+overwritten by the next release.
