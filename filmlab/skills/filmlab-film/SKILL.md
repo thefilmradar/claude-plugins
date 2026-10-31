@@ -77,6 +77,7 @@ These actions are available in Murnau, by hand or via its assistant IRO (descrip
 - `punch`: Auf ein gesprochenes Wort einzoomen (Punch-in) — der Bildausschnitt wird für das Wort enger, sonst bewegt sich nichts.
 - `titel`: Einen Titel (Text aufs Bild) setzen oder entfernen.
 - `effekt`: Deckkraft, Größe, Lage, Drehung und Lautstärke eines Clips setzen, auch mit Keyframes.
+- `tempo`: Das feste Tempo eines Videoclips setzen (0,0625× bis 16×, 1 = normal); sein Ton folgt.
 - `speed-ramping`: Die Geschwindigkeit innerhalb eines Clips verändern.
 
 ### Not available
