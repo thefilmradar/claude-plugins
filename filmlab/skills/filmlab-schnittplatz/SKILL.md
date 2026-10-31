@@ -10,19 +10,23 @@ description: "Use when a person wants to hand a FilmLab timeline to DaVinci Reso
 
 For Resolve and Final Cut choose fcpxml. For Premiere Pro choose edl: Premiere does not read fcpxml, and OTIO import is only available in Premiere Pro Beta. FilmLab's EDL has no paths (relink by clip name), no transitions and at most four audio channels. FilmLab does not generate Final Cut legacy XML (xmeml). lab_schnitt_export provides the editing file at no cost.
 
-## 2. Hand over a local timeline with its media
+## 2. Keep generated material private until release
+
+Ask whether generated material may stay in FilmLab's cloud. If it must stay private until release, set lab_speicherort to lokal (this computer) or server (the studio's shared storage, such as a NAS or Avid NEXIS) BEFORE generating; it applies to material generated from then on. Each new file is then only parked for pickup: the Resolve panel, FilmLab Drop (Final Cut Pro, Avid, Premiere Pro) and filmlab_abholen in the local bridge store it in the configured folder, check it and confirm, and FilmLab deletes its copy. Files not picked up within the pickup period are deleted. Picked-up material exists only with the person: FilmLab's server export, its local export and lab_schnitt_export cannot use it, so finish the cut in the editing software from the picked-up files, and switch lab_speicherort back to cloud for material that FilmLab should render.
+
+## 3. Hand over a local timeline with its media
 
 If the local FilmLab bridge (filmlab_export_lokal) is available, use it with timeline set to the chosen format instead of downloading individual clips: it writes the timeline next to a media folder of readable hardlinks and the provenance document, and refuses when a source is missing. It currently needs the local export from a FilmLab repository checkout; the installer does not ship it yet. Without it, give the person the file from lab_schnitt_export: its media point to FilmLab URLs and are relinked by file name in the editing software.
 
-## 3. Choose local render or server export
+## 4. Choose local render or server export
 
 The default is the server export: lab_start_export, then follow lab_get_export. Alpha, portrait 9:16 derivatives and sequences with a dub render always stay on the server. Where the local bridge is available (see the previous step) and delivery time matters, render on this computer with filmlab_export_lokal without timeline, and read progress with stand: true.
 
-## 4. Explain provenance before handing over
+## 5. Explain provenance before handing over
 
 Tell the person before handover: the provenance document describes only the file as exported. If the file is edited elsewhere afterwards, that document no longer describes it. For a published version, bring the cut back into FilmLab through the Resolve return path and export again; otherwise the person carries the AI disclosure for the edited file themselves.
 
-## 5. Prepare Resolve before import
+## 6. Prepare Resolve before import
 
 Set the Resolve project's frame rate to the timeline's rate BEFORE importing; Resolve uses the project rate. Resolve rejects the entire timeline when a source is missing; the local timeline export therefore stops with exit code 5 and writes no file. Restore the missing sources before trying again.
 
